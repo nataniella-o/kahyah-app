@@ -13,7 +13,7 @@ of their clothing items and see their wardrobe visually.
 | Layer | Technology |
 |---|---|
 | Frontend | React |
-| Backend | .NET 8 Web API (C# only — no Python) |
+| Backend | .NET 10 Web API (C# only — no Python) |
 | Database | Supabase (PostgreSQL) |
 | Auth | Supabase Auth |
 | File Storage | Supabase Storage (clothing photos) |
@@ -28,7 +28,7 @@ of their clothing items and see their wardrobe visually.
 ```
 Frontend (React)
 ↓
-REST API (.NET 8)
+REST API (.NET 10)
 ↓
 Supabase
 ├── Auth
@@ -170,7 +170,7 @@ smart-wardrobe-organizer/
 │   │   ├── pages/       ← one folder per page
 │   │   ├── styles/      ← global styles, design tokens
 │   │   └── lib/         ← Supabase client, API helpers
-├── server/              ← .NET 8 Web API
+├── server/              ← .NET 10 Web API
 │   ├── Controllers/
 │   ├── Models/
 │   └── Services/
