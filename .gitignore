@@ -1,0 +1,13 @@
+# Environment secrets
+.env
+*.env
+server/.env
+client/.env
+
+# .NET build output
+server/bin/
+server/obj/
+
+# OS/editor junk
+.DS_Store
+.vscode/
