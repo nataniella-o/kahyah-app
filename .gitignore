@@ -1,0 +1,35 @@
+### --- Root / General ---
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+.env.*.local
+
+### --- Client (Vite/React) ---
+client/node_modules/
+client/dist/
+client/.vite/
+client/*.local
+client/coverage/
+
+### --- Server (.NET 8) ---
+server/bin/
+server/obj/
+server/*.user
+server/appsettings.Development.json
+server/appsettings.*.local.json
+
+### --- IDE / Editor ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.swp
+
+### --- Husky (keep the hook scripts, ignore local state) ---
+.husky/_/
+
+### --- Supabase (if using local CLI) ---
+supabase/.branches
+supabase/.temp
