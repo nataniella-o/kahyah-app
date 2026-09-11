@@ -1,4 +1,13 @@
+using DotNetEnv;
+using server.Data;
+using Microsoft.EntityFrameworkCore; //for CountAsync
+
+//app.MapGet: end point got GET function for a defined URL path and possibly at the defined function next to the URL path. 
+Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AppDbContext>(options =>
+ options.UseNpgsql(Environment.GetEnvironmentVariable("SUPABASE_DB_CONNECTION_STRING")));
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -32,6 +41,12 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+app.MapGet("/test-db", async (AppDbContext db) =>
+{
+    var count = await db.ClothingItems.CountAsync();
+    return Results.Ok(new { message = "Connected to Supabase!", clothingItemCount = count });
+});
 
 app.Run();
 
