@@ -1,13 +1,38 @@
-# Environment secrets
+### --- Root / General ---
+.DS_Store
+Thumbs.db
+*.log
 .env
 *.env
-server/.env
-client/.env
+.env.local
+.env.*.local
 
-# .NET build output
+### --- Client (Vite/React) ---
+client/.env
+client/node_modules/
+client/dist/
+client/.vite/
+client/*.local
+client/coverage/
+
+### --- Server (.NET) ---
+server/.env
 server/bin/
 server/obj/
+server/*.user
+server/appsettings.Development.json
+server/appsettings.*.local.json
 
-# OS/editor junk
-.DS_Store
-.vscode/
+### --- IDE / Editor ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.swp
+
+### --- Husky (keep the hook scripts, ignore local state) ---
+.husky/_/
+
+### --- Supabase (if using local CLI) ---
+supabase/.branches
+supabase/.temp
